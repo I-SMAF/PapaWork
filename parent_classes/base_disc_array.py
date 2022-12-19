@@ -1,10 +1,13 @@
+"""
+module for Generic classes of DiscArray
+"""
 from typing import Iterable, Type
 from abc import ABC, abstractmethod
 from types import TracebackType
 
-from parent_classes.BaseLun import BaseLun
+from parent_classes.base_lun import BaseLun
 
-_BASE_LUN_CLASS = BaseLun
+BascLunClass = BaseLun
 
 
 class BaseDiscArray(ABC):
@@ -14,7 +17,7 @@ class BaseDiscArray(ABC):
     subsequent classes to work with server disk arrays
     """
 
-    def __init__(self, name: str, vendor: str):
+    def __init__(self, name: str, vendor: str = None):  # noqa: W0613
         """
         :param name: str
         :param vendor: str
@@ -62,9 +65,12 @@ class BaseDiscArray(ABC):
         return self.lun_set
 
     @abstractmethod
-    def lun_collect(  # to representation with override
+    def lun_collect(
             self
     ):
+        """
+        to representation with override
+        """
         pass
 
     def __enter__(

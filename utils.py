@@ -2,6 +2,7 @@
 set of utils (templates)
 """
 
+
 def collect() -> list[dict[str, str | int]]:
     """
     Template for lun array

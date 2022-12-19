@@ -1,3 +1,6 @@
+"""
+module for Generic classes of Lun
+"""
 from typing import Type
 from types import TracebackType
 

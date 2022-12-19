@@ -6,15 +6,15 @@ from abc import ABC
 from sys import modules
 from typing import Type
 
-from parent_classes.BaseDiscArray import BaseDiscArray
+from parent_classes.base_disc_array import BaseDiscArray
 
 # to delete
 from utils import collect, request_to_array
 
 # every BaseDiscArray`s children (subclasses) here:
-from Huawei import Huawei
-from Hitachi import Hitachi
-from IBM import IBM
+from huawei import Huawei  # noqa: F401, W0611
+from hitachi import Hitachi  # noqa: F401, W0611
+from ibm import IBM  # noqa: F401, W0611
 
 
 def get_disc_array_class(*, __vendor_name: str) -> Type[BaseDiscArray]:
@@ -31,8 +31,7 @@ def get_disc_array_class(*, __vendor_name: str) -> Type[BaseDiscArray]:
 
     if issubclass(__disc_array_class, BaseDiscArray):
         return __disc_array_class
-    else:
-        raise Exception(f'class by {__vendor_name} vendor_name not found')
+    raise Exception(f'class by {__vendor_name} vendor_name not found')
 
 
 def example():
