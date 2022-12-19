@@ -27,7 +27,7 @@ class BaseDiscArray(ABC):
 
     @staticmethod
     def lun_create_from_data(
-            __lun_class: Type[_BASE_LUN_CLASS] = _BASE_LUN_CLASS,
+            __lun_class: Type[BascLunClass] = BascLunClass,
             **kwargs
     ) -> BaseLun:
         """
