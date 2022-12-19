@@ -12,8 +12,11 @@ from parent_classes.base_disc_array import BaseDiscArray
 from utils import collect, request_to_array
 
 # every BaseDiscArray`s children (subclasses) here:
-from huawei import Huawei  # noqa: F401 pylint: disable=locally-disabled
+# pylint: disable=locally-disabled
+from huawei import Huawei  # noqa: F401
+# pylint: disable=locally-disabled
 from hitachi import Hitachi  # noqa: F401 pylint: disable=locally-disabled
+# pylint: disable=locally-disabled
 from ibm import IBM  # noqa: F401 pylint: disable=locally-disabled
 
 
