@@ -1,4 +1,7 @@
 def collect() -> list[dict[str, str | int]]:
+    """
+    Template for lun array
+    """
     example = [
         {
             'name': 'd500-137',
@@ -19,6 +22,9 @@ def collect() -> list[dict[str, str | int]]:
 
 
 def request_to_array() -> list[dict[str, str | int]]:
+    """
+    Template for disc array
+    """
     example = [
         {
             'name': "1",
