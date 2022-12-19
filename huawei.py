@@ -9,5 +9,8 @@ class Huawei(BaseDiscArray):
     class with override lun_collect (example)
     """
 
-    def lun_collect(self, *args):
+    def lun_collect(
+            self,
+            *args
+    ):
         self.lun_create_from_data_set(data_set=args)

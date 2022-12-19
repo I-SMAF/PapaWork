@@ -17,7 +17,10 @@ from hitachi import Hitachi  # noqa: F401
 from ibm import IBM  # noqa: F401
 
 
-def get_disc_array_class(*, __vendor_name: str) -> Type[BaseDiscArray]:
+def get_disc_array_class(
+        *,
+        __vendor_name: str
+) -> Type[BaseDiscArray]:
     """
     Method that processes string value for
     matching with valid module attribute

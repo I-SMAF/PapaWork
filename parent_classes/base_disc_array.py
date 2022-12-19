@@ -17,7 +17,12 @@ class BaseDiscArray(ABC):
     subsequent classes to work with server disk arrays
     """
 
-    def __init__(self, name: str, vendor: str = None):  # noqa: W0613
+    def __init__(
+            self,
+            *,
+            name: str,
+            vendor: str = None
+    ):  # noqa: W0613
         """
         :param name: str
         :param vendor: str

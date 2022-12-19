@@ -12,7 +12,13 @@ class BaseLun:
     classes to work with server disk arrays
     """
 
-    def __init__(self, *, name: str, uid: str, size: int):
+    def __init__(
+            self,
+            *,
+            name: str,
+            uid: str,
+            size: int
+    ):
         """
         :param name: str
         :param uid: str
