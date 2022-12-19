@@ -12,9 +12,9 @@ from parent_classes.base_disc_array import BaseDiscArray
 from utils import collect, request_to_array
 
 # every BaseDiscArray`s children (subclasses) here:
-from huawei import Huawei  # noqa: F401, W0611
-from hitachi import Hitachi  # noqa: F401, W0611
-from ibm import IBM  # noqa: F401, W0611
+from huawei import Huawei  # noqa: F401 pylint: disable=locally-disabled
+from hitachi import Hitachi  # noqa: F401 pylint: disable=locally-disabled
+from ibm import IBM  # noqa: F401 pylint: disable=locally-disabled
 
 
 def get_disc_array_class(*, __vendor_name: str) -> Type[BaseDiscArray]:
