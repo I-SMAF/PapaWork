@@ -1,4 +1,4 @@
-from parentClasses.BaseDiscArray import BaseDiscArray
+from parent_classes.BaseDiscArray import BaseDiscArray
 
 
 class IBM(BaseDiscArray):

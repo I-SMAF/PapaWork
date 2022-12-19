@@ -6,7 +6,7 @@ from abc import ABC
 from sys import modules
 from typing import Type
 
-from parentClasses.BaseDiscArray import BaseDiscArray
+from parent_classes.BaseDiscArray import BaseDiscArray
 
 # to delete
 from utils import collect, request_to_array

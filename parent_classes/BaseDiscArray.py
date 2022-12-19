@@ -2,7 +2,7 @@ from typing import Iterable, Type
 from abc import ABC, abstractmethod
 from types import TracebackType
 
-from parentClasses.BaseLun import BaseLun
+from parent_classes.BaseLun import BaseLun
 
 _BASE_LUN_CLASS = BaseLun
 
