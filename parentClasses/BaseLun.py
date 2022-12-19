@@ -2,7 +2,13 @@ from typing import Type
 from types import TracebackType
 
 
-class Lun:
+class BaseLun:
+    """
+    Basic class describing a mandatory basics of
+    methodologies and attributes of all subsequent
+    classes to work with server disk arrays
+    """
+
     def __init__(self, *, name: str, uid: str, size: int):
         """
         :param name: str
@@ -16,9 +22,6 @@ class Lun:
     def __enter__(
             self
     ):
-        """
-        :return None:
-        """
         return self
 
     def __exit__(

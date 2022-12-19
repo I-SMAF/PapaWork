@@ -1,7 +1,7 @@
-from parentClasses.DiscArray import DiscArray
+from parentClasses.BaseDiscArray import BaseDiscArray
 
 
-class Huawei(DiscArray):
+class Huawei(BaseDiscArray):
 
     def lun_collect(self, *args):
         self.lun_create_from_data_set(data_set=args)

@@ -14,10 +14,6 @@ def collect() -> list[dict[str, str | int]]:
             'name': 'd500-137',
             'vendor': 'IBM'
         },  # ssh | rest
-        {
-            'name': 'd500-137',
-            'vendor': 'asdads'
-        },  # ssh | rest
     ]
     return example
 

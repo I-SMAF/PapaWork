@@ -2,10 +2,17 @@ from typing import Iterable, Type
 from abc import ABC, abstractmethod
 from types import TracebackType
 
-from parentClasses.Lun import Lun
+from parentClasses.BaseLun import BaseLun
+
+_BASE_LUN_CLASS = BaseLun
 
 
-class DiscArray(ABC):
+class BaseDiscArray(ABC):
+    """
+    Basic abstract class describing a mandatory
+    basics of methodologies and attributes of all
+    subsequent classes to work with server disk arrays
+    """
 
     def __init__(self, name: str, vendor: str):
         """
@@ -14,23 +21,24 @@ class DiscArray(ABC):
         """
         self.lun_set: set = set()
         self.name = name
-        self.lun_collect()
 
     @staticmethod
     def lun_create_from_data(
+            __lun_class: Type[_BASE_LUN_CLASS] = _BASE_LUN_CLASS,
             **kwargs
-    ) -> Lun:
+    ) -> BaseLun:
         """
+        method for generate Lun instance
+        :param __lun_class: Type[BaseLun]
         :param kwargs:
         **{
             -:param name: str
             -:param uid: str
             -:param size: int
         }
-        :return:
+        :return Lun:
         """
-        lun = Lun(**kwargs)
-        return lun
+        return __lun_class(**kwargs)
 
     def lun_create_from_data_set(
             self,
@@ -48,25 +56,20 @@ class DiscArray(ABC):
         ]
         :return self.lun_set: set
         """
-        __lun_set: set = set(
+        self.lun_set = set(
             self.lun_create_from_data(**__lun) for __lun in data_set
         )
-        self.lun_set = __lun_set
         return self.lun_set
 
     @abstractmethod
-    def lun_collect(
+    def lun_collect(  # to representation with override
             self
     ):
-        # to representation with
         pass
 
     def __enter__(
             self
     ):
-        """
-        :return None:
-        """
         return self
 
     def __exit__(

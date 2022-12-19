@@ -1,7 +1,7 @@
-from parentClasses.DiscArray import DiscArray
+from parentClasses.BaseDiscArray import BaseDiscArray
 
 
-class Hitachi(DiscArray):
+class Hitachi(BaseDiscArray):
     def __init__(self, *, instance_id: int, proxy: int, **kwargs):
         super().__init__(**kwargs)
         self.instance_id = instance_id
